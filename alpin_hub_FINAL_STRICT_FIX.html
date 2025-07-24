@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Orbitron:wght@700&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   Alpin Hub
+  </title>
+<style>
+   * {margin:0; padding:0; box-sizing:border-box; font-family:'Bebas Neue', sans-serif;}
+    body {
+      
+    background: url('https://files.catbox.moe/k3ooyf.jpg') no-repeat center center fixed;
+    background-size: cover;
+    
+      min-height: 100vh;
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      background: #ff69b4;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    #home {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 1;
+}
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .card-title {
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      color: #ff69b4;
+    }
+    #detail {
+      display: none;
+      padding: 20px;
+    }
+    #detail h2 {
+      color: #ff69b4;
+      text-align: center;
+    }
+    #detail img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .links a {
+      padding: 10px 15px;
+      background: #ff69b4;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .back-btn {
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px 20px;
+      border: 2px solid #ff69b4;
+      background: white;
+      color: #ff69b4;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .back-btn:hover {
+      background: #ff69b4;
+      color: white;
+    }
+    #popup {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    #popup .content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      color: #ff69b4;
+    }
+    #popup button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+@keyframes rainbow {
+  0% { color: red; }
+  25% { color: orange; }
+  50% { color: yellow; }
+  75% { color: green; }
+  100% { color: blue; }
+}
+.animated-title {
+  font-size: 1.8rem;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  background: #ff69b4;
+  filter: blur(0.5px);
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  animation: none;
+}
+
+.card {
+  background: rgba(255, 105, 180, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px; /* more rounded */
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+#detail h2 {
+  animation: pulse 2s infinite;
+  text-shadow: 0 0 10px #ff69b4;
+}
+
+.links a {
+  animation: rainbow 4s infinite;
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+  
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+.animated-title {
+  
+}
+  
+
+  
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+
+
+@keyframes glow {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+
+
+
+
+
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+
+      /* biru */
+  25% { color: #ffffff; }     /* putih */
+  50% { color: #f1c40f; }     /* kuning */
+  75% { color: #ff69b4; }     /* pink */
+  100% { color: #3498db; }    /* biru */
+}
+
+.glow-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ff69b4, #fff, #00ffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowShift 4s ease-in-out infinite;
+  text-shadow: 2px 2px 10px rgba(255,105,180,0.7), -2px -2px 6px rgba(255,255,255,0.6);
+}
+@keyframes glowShift {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+
+     /* biru */
+  25% { color: #ffffff; }    /* putih */
+  50% { color: #f1c40f; }    /* kuning */
+  75% { color: #ff69b4; }    /* pink */
+  100% { color: #3498db; }   /* biru lagi */
+}
+
+
+
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+.blink {
+  animation: blink 1.2s infinite;
+}
+
+
+  16% { background-color: orange; }
+  32% { background-color: yellow; }
+  48% { background-color: green; }
+  64% { background-color: blue; }
+  80% { background-color: indigo; }
+  100% { background-color: violet; }
+}
+.rainbow-button {
+  animation: rainbowBG 4s linear infinite, blink 1.2s infinite;
+}
+
+#videoTitle {
+  font-size: 48px;
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff; /* putih solid */
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* bayangan hitam tipis */
+  margin-bottom: 20px;
+}
+   .rainbow-button {
+    animation: rainbowBG 4s linear infinite, blink 1.2s infinite;
+    background: linear-gradient(45deg, #ff69b4, #e1306c, #ff69b4);
+    background-size: 400% 400%;
+    box-shadow: 0 0 15px rgba(255,105,180,0.7);
+  }
+  @keyframes rainbowBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  .glow-text {
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+  }
+   #detail {
+    background-attachment: scroll !important;
+  }
+   .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  </style>
+</head>
+<body>
+<div style="margin: 20px auto; max-width: 400px; padding: 15px 25px; text-align: center; border-radius: 20px; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); box-shadow: 0 0 20px rgba(255,105,180,0.5);"><span class="glow-text glow-text" style="font-size: 26px; display: inline-block; animation: glow 2s infinite;">Room Gudang Asupan</span></div><section id="home" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; padding: 20px;">
+</section>
+<section id="detail" style="display: none; padding: 20px; background-color: rgba(0,0,0,0.3); ">
+<h2 id="videoTitle" style="color: white; font-size: 28px; text-shadow: 1px 1px 3px black; text-align: center; font-weight: bold;">
+</h2>
+<img alt="Thumbnail Video" id="videoImage" src=""/>
+<div class="links" id="videoLinks">
+</div>
+<br/>
+<br/>
+<div style="text-align:center;">
+<button onclick="showDeskripsi()" style="margin-bottom: 20px; padding: 10px 20px; background: #ff69b4; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; display: block; margin: 20px auto; box-shadow: 0 0 10px rgba(255,105,180,0.6); transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+     Deskripsi Website
+    </button>
+<div style="text-align: center; margin-bottom: 20px;">
+</div>
+<div style="margin-top: 40px; padding: 20px; border-radius: 20px; backdrop-filter: blur(10px); background: rgba(0, 0, 0, 0.3); box-shadow: 0 0 10px rgba(0,0,0,0.5); text-align: center;">
+<a href="https://t.me/+UTTOt6gZPpljODk1" id="telegramButton" style="padding: 10px 20px; font-size: 14px; background: #229ED9; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; display: block; width: fit-content; margin: 10px auto;">
+      Join saluran Telegram
+     </a>
+<div style="color: #eee; font-size: 14px; margin-top: 20px; font-weight: normal; text-shadow: 1px 1px 2px black;">
+      Follow akun Instagram admin
+     </div>
+<a class="blink rainbow-button rainbow-button" href="https://instagram.com/_alvincandra" id="teraboxButton" style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 14px; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; width: fit-content; animation: rainbowBG 4s linear infinite, blink 1.2s infinite; background: linear-gradient(45deg, #ff69b4, #e1306c, #ff69b4); background-size: 400% 400%; box-shadow: 0 0 15px rgba(255,105,180,0.7);" target="_blank">
+      Instagram
+     </a>
+</div>
+</div>
+<button class="back-btn" onclick="showHome()">
+    Kembali
+   </button>
+</section>
+<div id="popup">
+<div class="content">
+<h3>
+     Konten Dewasa
+    </h3>
+<p>
+     Apakah kamu berusia 18+?
+    </p>
+<button onclick="closePopup()">
+     Ya, Lanjut
+    </button>
+</div>
+</div>
+<script>
+   const videos = [
+  { title: 'anggi tiktokers', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videq.mom/d/u2p5pancdvgh', 'https://videq.mom/d/zo7al2y0cb70', 'https://videq.mom/d/jrlkya5htlfa', 'https://videq.mom/d/fmowyc2w37hf'] },
+  { title: 'arrayesa tiktokers', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videq.mom/d/gucjwwty91m2', 'https://videq.mom/d/gsxiw439pfa3', 'https://videq.mom/d/h2d85zajh6sl', 'https://videq.mom/d/nrafmhxv0qv7'] },
+  { title: 'sempeh cuby ', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videq.mom/d/lxfdyrovzwey', 'https://videq.mom/d/5em40cb3d2cv', 'https://videq.mom/d/8tmlg6ddn9bd', 'https://videq.mom/d/w9jpllo0n8xe'] },
+  { title: 'hijab tobrut 1', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videq.mom/d/uo63d37czv5a', 'https://videq.mom/d/3r47cf0cswcn', 'https://videq.mom/d/0ntj6sssq77s', 'https://videq.mom/d/mratbhexz9u1'] },
+  { title: 'hijab tobrut 2', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videq.mom/d/j1tdbfoujw9o', 'https://videq.mom/d/ixx2jxty8pyk', 'https://videq.mom/d/16ovowbx84gn', 'https://videq.mom/d/30rtx93pwmy5'] },
+  { title: 'dede ayy', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videq.mom/d/46kmarin3rho', 'https://videq.mom/d/muvinzx2m2a7', 'https://videq.mom/d/3k9boqbqwejn', 'https://videq.mom/d/zn9c3zat316v'] },
+  { title: 'andini update ', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videq.mom/d/pienihqqb3v3', 'https://videq.mom/d/1oz4ffhylf5k', 'https://videq.mom/d/ednngnvor5n9', 'https://videq.mom/d/53c6zkyw01gi'] },
+  { title: 'Cici kesayangan update', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videy.co/v/?id=35boOGhv2', 'https://videy.co/v/?id=CQPFcuM92', 'https://videy.co/v/?id=1LYuSWel2', 'https://videy.co/v/?id=DDTBfB9w2'] },
+  { title: 'viky rose', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videy.co/v/?id=JtWpbmMK1', 'https://videy.co/v/?id=pjda9xNX1', 'https://videy.co/v/?id=D2cfCsHS1', 'https://videy.co/v/?id=MFnX4ItG1'] },
+  { title: 'bersama kk ipar', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videy.co/v/?id=H5G1yDJm1', 'https://videy.co/v/?id=tZnCf7tl1', 'https://videy.co/v/?id=Dmrc1IZR1', 'https://videy.co/v/?id=R0dGHUYg1'] },
+  { title: 'Dalam kenikmatan', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videy.co/v/?id=Yi1jJjfw1', 'https://videy.co/v/?id=Rc1A6FYj1', 'https://videy.co/v/?id=U6zXJ0kK1', 'https://videy.co/v/?id=uuI1b7IR1'] },
+  { title: 'hijab penurut', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videy.co/v/?id=8TCuAPlt1', 'https://videy.co/v/?id=VNeokyFJ1', 'https://videy.co/v/?id=ltsxFMmK1', 'https://videy.co/v/?id=7iDSCe4i1'] },
+  { title: 'si manis baju pink', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://videy.co/v/?id=Lg0CG4r01', 'https://videy.co/v/?id=7H0cNLBn1', 'https://videy.co/v/?id=aW7p9qpg1', 'https://videy.co/v/?id=ys4wPCGf1'] },
+  { title: 'coba rasa pembantu', image: 'https://files.catbox.moe/fm966t.jpg', links: ['https://slicedrive.com/upload/?v=nm059eNv1', 'https://slicedrive.com/upload/?v=G8LVxoCJ1', 'https://slicedrive.com/upload/?v=0PcheRAv1', 'https://slicedrive.com/upload/?v=a8WEPuvI1'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] }
+,
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] },
+  { title: 'kosong', image: 'https://files.catbox.moe/mh2ewn.png', links: ['#', '#', '#', '#'] }
+];
+
+const home = document.getElementById('home');
+
+videos.forEach((video, index) => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <img src='${video.image}' alt='${video.title}' />
+    <div class="card-title">${video.title}</div>
+  `;
+  card.addEventListener('click', () => showDetail(index));
+  home.appendChild(card);
+});
+
+function showDetail(index) {
+  const video = videos[index];
+  document.getElementById('videoTitle').textContent = video.title;
+  document.getElementById('videoImage').src = video.image;
+
+  const linksContainer = document.getElementById('videoLinks');
+  linksContainer.innerHTML = '';
+  video.links.forEach((link, i) => {
+    const a = document.createElement('a');
+    a.href = link;
+    a.target = '_blank';
+    a.textContent = `Link ${i+1}`;
+    linksContainer.appendChild(a);
+  
+  });
+
+  home.style.display = 'none';
+  document.getElementById('detail').style.display = 'block';
+}
+
+function showHome() {
+  document.getElementById('detail').style.display = 'none';
+  home.style.display = 'grid';
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+   const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(card => {
+    card.classList.add('fade-in-up');
+    observer.observe(card);
+  });
+   function showDeskripsi() {
+    document.getElementById('detail').style.display = 'none';
+    document.getElementById('deskripsi').style.display = 'block';
+  }
+  function showDetailFromDeskripsi() {
+    document.getElementById('deskripsi').style.display = 'none';
+    document.getElementById('detail').style.display = 'block';
+  }
+  </script>
+
+<section id="deskripsi" style="display: none; background-color: rgba(0,0,0,0.4); backdrop-filter: blur(8px); padding: 30px 20px; color: white; font-family: 'Orbitron', sans-serif;">
+  <h2 style="text-align: center; font-size: 26px; margin-bottom: 20px; color: white; text-shadow: 1px 1px 3px black;">Deskripsi Website</h2>
+  <p style="max-width: 680px; margin: 0 auto; text-align: justify; font-size: 16px; line-height: 1.7; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; box-shadow: 0 0 10px rgba(255,255,255,0.1);">
+    <strong>Alpin Hub</strong> adalah ruang hiburan digital dari tim AlpinDeveloper. Dibuat khusus untuk memberikan akses cepat dan ringan ke konten yang kamu butuhin.<br><br>
+    🔧 <strong>Fitur:</strong><br>
+    - Tampilan ringan & responsif<br>
+    - Navigasi cepat & simpel<br>
+    - Konten terus diperbarui<br>
+    - Bisa dibuka lewat HP maupun desktop<br><br>
+    ⚠️ <strong>Disclaimer:</strong><br>
+    Website ini hanya untuk pemakaian pribadi. Tidak untuk dijual ulang atau dikomersialkan. Segala penyalahgunaan bukan tanggung jawab developer.
+  </p>
+  <button onclick="showDetailFromDeskripsi()" style="margin-top: 30px; display: block; margin-left: auto; margin-right: auto; padding: 10px 20px; background: white; color: #ff69b4; border: 2px solid #ff69b4; border-radius: 8px; font-weight: bold; cursor: pointer;">Kembali ke Kontak</button>
+</section>
+
+</body>
+</html>
